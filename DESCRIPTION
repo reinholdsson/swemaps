@@ -1,0 +1,10 @@
+Package: swemaps
+Type: Package
+Title: Swedish map data for ggplot and leaflet in R
+Version: 1.0
+Date: 2015-05-17
+Author: Thomas Reinholdsson
+Maintainer: Thomas Reinholdsson <reinholdsson@gmail.com>
+Description: ...
+License: AGPLv3
+LazyData: true
