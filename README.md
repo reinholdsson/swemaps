@@ -1,9 +1,9 @@
 ## swemaps
 
 **Swedish map data for ggplot and leaflet in R**
+  
+  devtools::install_github('reinholdsson/swemaps')
 
-    devtools::install_github('reinholdsson/swemaps')
-    
 ### Datasets
 
 - `map_ln`: regions polygon data
@@ -13,10 +13,11 @@
 
 ### Examples
 
+#### ggplot2
+
 ```{r}
 library(ggplot2)
 library(swemaps)
-library(leaflet)  # devtools::install_github("rstudio/leaflet")
 library(rkolada)  # devtools::install_github("reinholdsson/rkolada")
 
 # function to merge kolada data with map data from swemaps
@@ -28,11 +29,7 @@ prepare_map_data <- function(x) {
 
 # rkolada conn
 a <- rkolada::rkolada()
-```
 
-#### ggplot2
-
-```{r}
 # Get data from Kolada
 x <- a$values('N00941', year = 2010)  # make sure "kpi.municipality_type == 'K'"
 x <- prepare_map_data(x)
@@ -56,14 +53,15 @@ ggplot(x, aes_string('ggplot_long', 'ggplot_lat', group = 'knkod', fill = 'value
 ```
 
 ![](/img/example_2.png?raw=true)
-  
+
 #### leaflet
 
 https://rstudio.github.io/leaflet/
-
+  
 ```{r}
-x <- a$values('N00941', year = 2010, all.cols = T)
-x <- prepare_map_data(x)
+library(leaflet)  # devtools::install_github("rstudio/leaflet")
+
+x <- map_kn
 
 m <- leaflet() %>% addTiles()
 
@@ -77,6 +75,26 @@ m  # plot!
 
 ![](/img/example_3.png?raw=true)
 
+with coloured areas:
+
+```{r}
+library(plotrix)
+
+x <- a$values('N01963', year = 2010)
+x <- subset(x, gender == 'T')
+x <- prepare_map_data(x)
+x$color <- substring(color.scale(x$value, c(0,1,1), c(1,1,0), 0), 1, 7)
+
+m <- leaflet() %>% addTiles()
+for (kn in unique(x$knkod)) {
+  i <- x[x$knkod == kn,]
+  m <- m %>% addPolygons(i$leaflet_long, i$leaflet_lat, color = i$color[[1]], weight = 1)
+}
+m
+```
+
+![](/img/example_4.png?raw=true)
+
 ### Source
 
-arcgis (Kommungr√§nser_SCB_07, L√§nsgr√§nser_SCB_07), SCB
+arcgis (Kommungr‰nser_SCB_07, L‰nsgr‰nser_SCB_07), SCB
