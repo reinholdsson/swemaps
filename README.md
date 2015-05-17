@@ -23,7 +23,7 @@ library(rkolada)  # devtools::install_github("reinholdsson/rkolada")
 prepare_map_data <- function(x) {
   x$knkod <- x$municipality.id
   data <- merge(map_kn, x, by = 'knkod')
-  data[order(data$order),]# make sure it's sorted by "order" column
+  data[order(data$order),]  # make sure it's sorted by "order" column
 }
 
 # rkolada conn
