@@ -83,7 +83,7 @@ library(plotrix)
 x <- a$values('N01963', year = 2010)
 x <- subset(x, gender == 'T')
 x <- prepare_map_data(x)
-x$color <- substring(color.scale(x$value, c(0,1,1), c(1,1,0), 0), 1, 7)
+x$color <- substring(color.scale(x$value, c(1,1,0), c(0,1,1), 0), 1, 7)
 
 m <- leaflet() %>% addTiles()
 for (kn in unique(x$knkod)) {
