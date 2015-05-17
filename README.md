@@ -36,6 +36,7 @@ a <- rkolada::rkolada()
 # Get data from Kolada
 x <- a$values('N00941', year = 2010)  # make sure "kpi.municipality_type == 'K'"
 x <- prepare_map_data(x)
+
 # Plot it!
 ggplot(x, aes_string('ggplot_long', 'ggplot_lat', group = 'knkod', fill = 'value')) +
   geom_polygon() +
