@@ -13,9 +13,9 @@
 
 ```{r}
 library(ggplot2)
-library(leaflet)
-library(rkolada)
 library(swemaps)
+library(leaflet)  # devtools::install_github("rstudio/leaflet")
+library(rkolada)  # devtools::install_github("reinholdsson/rkolada")
 
 # function to merge kolada data with map data from swemaps
 prepare_map_data <- function(x) {
