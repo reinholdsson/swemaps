@@ -1,8 +1,6 @@
 ## swemaps
 
-**dataset with swedish polygon data for ggplot and leaflet in R**
-
-### Install
+***dataset with swedish polygon data for ggplot and leaflet in R***
 
     devtools::install_github('reinholdsson/swemaps')
     
