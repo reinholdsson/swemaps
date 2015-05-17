@@ -1,8 +1,6 @@
 ## swemaps: dataset with swedish polygon data for ggplot and leaflet in R
 
-Source: arcgis (`Kommungränser_SCB_07`, `Länsgränser_SCB_07`), SCB
-
-    devtools::install_github('reinholdsson/swemap')
+    devtools::install_github('reinholdsson/swemaps')
 
 - `map_ln`: regions polygon data
 - `map_kn`: municipalities polygon data
@@ -13,3 +11,6 @@ Source: arcgis (`Kommungränser_SCB_07`, `Länsgränser_SCB_07`), SCB
 
 ```{r}
 
+### Source
+
+arcgis (`Kommungränser_SCB_07`, `Länsgränser_SCB_07`), SCB
