@@ -2,7 +2,11 @@
 
 **dataset with swedish polygon data for ggplot and leaflet in R**
 
+### Install
+
     devtools::install_github('reinholdsson/swemaps')
+    
+### Datasets
 
 - `map_ln`: regions polygon data
 - `map_kn`: municipalities polygon data
