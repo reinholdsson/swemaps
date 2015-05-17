@@ -38,7 +38,7 @@ ggplot(x, aes_string('ggplot_long', 'ggplot_lat', group = 'knkod', fill = 'value
   coord_equal()
 ```
 
-![](/example_1.png?raw=true)
+![](/img/example_1.png?raw=true)
 
 ```{r}
 x <- a$values('N00941', c('1440', '0604', '2505', '2084'), year = 2010, all.cols = T)
@@ -50,7 +50,7 @@ ggplot(x, aes_string('ggplot_long', 'ggplot_lat', group = 'knkod', fill = 'value
   theme_bw()
 ```
 
-![](/example_2.png?raw=true)
+![](/img/example_2.png?raw=true)
   
 #### leaflet
 ```{r}
@@ -67,7 +67,7 @@ for (kn in unique(x$knkod)) {
 m  # plot!
 ```
 
-![](/example_3.png?raw=true)
+![](/img/example_3.png?raw=true)
 
 ### Source
 
