@@ -58,6 +58,9 @@ ggplot(x, aes_string('ggplot_long', 'ggplot_lat', group = 'knkod', fill = 'value
 ![](/img/example_2.png?raw=true)
   
 #### leaflet
+
+https://rstudio.github.io/leaflet/
+
 ```{r}
 x <- a$values('N00941', year = 2010, all.cols = T)
 x <- prepare_map_data(x)
@@ -76,4 +79,4 @@ m  # plot!
 
 ### Source
 
-arcgis (`Kommungränser_SCB_07`, `Länsgränser_SCB_07`), SCB
+arcgis (Kommungränser_SCB_07, Länsgränser_SCB_07), SCB
