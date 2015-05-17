@@ -1,4 +1,6 @@
-## swemaps: dataset with swedish polygon data for ggplot and leaflet in R
+## swemaps
+
+**dataset with swedish polygon data for ggplot and leaflet in R**
 
     devtools::install_github('reinholdsson/swemaps')
 
@@ -26,7 +28,7 @@ prepare_map_data <- function(x) {
 a <- rkolada::rkolada()
 ```
 
-#### ggplot
+#### ggplot2
 
 ```{r}
 # Get data from Kolada
