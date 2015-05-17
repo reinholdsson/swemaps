@@ -24,9 +24,11 @@ prepare_map_data <- function(x) {
 
 # rkolada conn
 a <- rkolada::rkolada()
+```
 
-## Example 1 ###
+#### ggplot
 
+```{r}
 # Get data from Kolada
 x <- a$values('N00941', year = 2010)  # make sure "kpi.municipality_type == 'K'"
 x <- prepare_map_data(x)
@@ -34,9 +36,11 @@ x <- prepare_map_data(x)
 ggplot(x, aes_string('ggplot_long', 'ggplot_lat', group = 'knkod', fill = 'value')) +
   geom_polygon() +
   coord_equal()
+```
 
-### Example 2 ###
+![](/example_1.png?raw=true)
 
+```{r}
 x <- a$values('N00941', c('1440', '0604', '2505', '2084'), year = 2010, all.cols = T)
 x <- prepare_map_data(x)
 ggplot(x, aes_string('ggplot_long', 'ggplot_lat', group = 'knkod', fill = 'value')) +
@@ -44,9 +48,12 @@ ggplot(x, aes_string('ggplot_long', 'ggplot_lat', group = 'knkod', fill = 'value
   coord_equal() +
   facet_wrap(~municipality.title, scales = 'free', ncol = 2) +
   theme_bw()
+```
 
-### Example 3 ###
-
+![](/example_2.png?raw=true)
+  
+#### leaflet
+```{r}
 x <- a$values('N00941', year = 2010, all.cols = T)
 x <- prepare_map_data(x)
 
@@ -54,12 +61,13 @@ m <- leaflet() %>% addTiles()
 
 for (kn in unique(x$knkod)) {
   i <- x[x$knkod == kn,]
-  browser()
   m <- m %>% addPolygons(i$leaflet_long, i$leaflet_lat, color = 'blue', weight = 1)
 }
 
 m  # plot!
 ```
+
+![](/example_3.png?raw=true)
 
 ### Source
 
