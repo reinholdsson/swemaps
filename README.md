@@ -3,6 +3,7 @@
 **Swedish map data for ggplot and leaflet in R**
   
 ```{r}
+# install.packages('devtools')
 devtools::install_github('reinholdsson/swemaps')
 ```
 
