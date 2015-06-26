@@ -2,7 +2,9 @@
 
 **Swedish map data for ggplot and leaflet in R**
   
-  devtools::install_github('reinholdsson/swemaps')
+```{r}
+devtools::install_github('reinholdsson/swemaps')
+```
 
 ### Datasets
 
@@ -97,4 +99,4 @@ m
 
 ### Source
 
-arcgis (Kommungr‰nser_SCB_07, L‰nsgr‰nser_SCB_07), SCB
+arcgis (Kommungr√§nser_SCB_07, L√§nsgr√§nser_SCB_07), SCB
